@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <ProjectReference Include="..\MsContatos.Core\MsContatos.Core.csproj" />
+    <ProjectReference Include="..\MsContatos.Infra\MsContatos.Infra.csproj" />
+    <ProjectReference Include="..\MsContatos.Shared\MsContatos.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

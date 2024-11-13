@@ -42,15 +42,3 @@ jobs:
 
     - name: Implantação no Kubernetes
       run: kubectl apply -f mscontatos.api/deploy/deployment.yaml
-
-
-
-
-
-
-
-          
-          
-          
-          docker build -t fabaofloripa/:latest .
-          docker push fabaofloripa/mscontatos.api:latest

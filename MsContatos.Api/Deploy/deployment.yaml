@@ -28,6 +28,6 @@ spec:
   selector:
     app: mscontatoapipod
   ports:
-    - port: 8084
+    - targetPort: 8084
       port: 80      
   type: ClusterIP 

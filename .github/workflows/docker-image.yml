@@ -42,3 +42,5 @@ jobs:
 
     - name: Implantação no Kubernetes
       run: kubectl apply -f MsContatos.Api/Deploy/deployment.yaml
+    - name: Atualizando as pods
+      run: kubectl rollout restart deployment mscontatoapipod

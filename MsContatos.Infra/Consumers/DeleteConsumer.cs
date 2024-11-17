@@ -21,7 +21,7 @@ namespace MsContatos.Infra.Consumers
 
         private readonly ILogger<DeleteConsumer> logger;
         private readonly IContatoServices services;
-        private readonly int intervaloMensagemWorkerAtivo = 10000;
+        private readonly int intervaloMensagemWorkerAtivo = 60000;
         private readonly string url = "amqps://nzosfmoq:uZNH48guR3ZZzmTWib0KoeZUYFICSQI7@fly.rmq.cloudamqp.com/nzosfmoq";
         private readonly string queue = "CONTATO_DELETE";
         public DeleteConsumer(ILogger<DeleteConsumer> logger, IContatoServices services)

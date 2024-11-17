@@ -37,7 +37,8 @@ namespace MsContatos.Infra.Consumers
 
             var factory = new ConnectionFactory()
             {
-                Uri = new Uri(url)
+                Uri = new Uri(url),
+                Ssl = new SslOption { Enabled = true, ServerName = "fly.rmq.cloudamqp.com" }
             };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();

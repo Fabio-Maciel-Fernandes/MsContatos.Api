@@ -25,9 +25,9 @@ builder.Services.AddSingleton<IServices<Compilacao>, CompilacaoServices>();
 builder.Services.AddSingleton<IContatoRepository, ContatoRepository>();
 builder.Services.AddSingleton<IRepository<Compilacao>, CompilacaoRepository>();
 builder.Services.AddExceptionHandler<ExceptionHandler>();
-//builder.Services.AddHostedService<InclusaoConsumer>();
-//builder.Services.AddHostedService<UpdateConsumer>();
-//builder.Services.AddHostedService<DeleteConsumer>();
+builder.Services.AddHostedService<InclusaoConsumer>();
+builder.Services.AddHostedService<UpdateConsumer>();
+builder.Services.AddHostedService<DeleteConsumer>();
 
 builder.Services.AddSingleton<IDbConnection>((connection) => new NpgsqlConnection(connectionString));
 

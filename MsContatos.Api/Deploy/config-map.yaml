@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-secret
+  labels:
+    app: postgrescontato
+data:
+  POSTGRES_DB: contatosdatabase
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: Floripa102030

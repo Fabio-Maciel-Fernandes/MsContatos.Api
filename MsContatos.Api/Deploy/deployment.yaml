@@ -15,16 +15,21 @@ spec:
     spec:
       containers:
         - name: postgrescontato
-          image: postgres:13.1
-          env:
-          - name: POSTGRES_PASSWORD
-            value: Floripa102030
-          - name: POSTGRES_USER
-            value: postgres
-          - name: POSTGRES_DB
-            value: contatosdatabase
+          image: postgres:13.1          
           ports:
             - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres-secret
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresdata  
+      volumes:
+        - name: postgresdata
+          persistentVolumeClaim:
+            claimName: postgres-volume-claim
+        
+
 ---
 apiVersion: v1
 kind: Service

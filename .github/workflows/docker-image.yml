@@ -41,6 +41,8 @@ jobs:
         dir
         
 
+    - name: Criando storageclass
+      run: kubectl apply -f MsContatos.Api/Deploy/storageclass.yaml 
     - name: Criando persistente volume
       run: kubectl apply -f MsContatos.Api/Deploy/persistent-volume.yaml  
     - name: Criando persistente volume clain

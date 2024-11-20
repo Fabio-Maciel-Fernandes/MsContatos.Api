@@ -42,9 +42,9 @@ jobs:
         
 
     - name: Criando persistente volume
-      run: kubectl apply -f MsContatos.Api/Deploy/MsContatos.Api/Deploy/persistent-volume.yaml  
+      run: kubectl apply -f MsContatos.Api/Deploy/persistent-volume.yaml  
     - name: Criando persistente volume clain
-      run: kubectl apply -f MsContatos.Api/Deploy/MsContatos.Api/Deploy/persistent-volume-claim.yaml  
+      run: kubectl apply -f MsContatos.Api/Deploy/persistent-volume-claim.yaml  
     - name: Implantação no Kubernetes
       run: kubectl apply -f MsContatos.Api/Deploy/deployment.yaml
     - name: Atualizando as pods

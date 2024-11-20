@@ -3,10 +3,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgrescontato
-spec: 
+spec:
   replicas: 1
   selector:
-    matchLabels: 
+    matchLabels:
       app: postgrescontato
   template:
     metadata:
@@ -14,27 +14,27 @@ spec:
         app: postgrescontato
     spec:
       containers:
-        - name: postgrescontato
-          image: postgres:13.1          
-          ports:
-            - containerPort: 5432            
-          resources: 
-            requests: 
-              memory: "512Mi" 
-              cpu: "500m" 
-            limits: 
-              memory: "1Gi" 
-              cpu: "1"
-          envFrom:
-            - configMapRef:
-                name: postgres-secret
-          volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgresdata  
+      - name: postgrescontato
+        image: postgres:13.1
+        ports:
+        - containerPort: 5432
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
+        envFrom:
+        - configMapRef:
+            name: postgres-secret
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgresdata
       volumes:
-        - name: postgresdata
-          persistentVolumeClaim:
-            claimName: postgres-volume-claim
+      - name: postgresdata
+        persistentVolumeClaim:
+          claimName: postgres-volume-claim
         
 
 ---

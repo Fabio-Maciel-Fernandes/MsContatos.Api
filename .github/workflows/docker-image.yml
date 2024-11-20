@@ -41,6 +41,8 @@ jobs:
         dir
         
 
+    - name: Criando configmap
+      run: kubectl apply -f MsContatos.Api/Deploy/config-map.yaml
     - name: Criando storageclass
       run: kubectl apply -f MsContatos.Api/Deploy/storageclass.yaml 
     - name: Criando persistente volume
